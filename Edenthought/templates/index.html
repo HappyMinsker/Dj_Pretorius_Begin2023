@@ -1,0 +1,15 @@
+{% include 'base.html' %}
+
+
+<h3>Home page !</h3>
+
+
+{% for client in clients %}
+<p>{{client.id}}</p>
+<p>{{client.name}}</p>
+<p>{{client.profession}}</p>
+<br>
+
+{% endfor %}
+
+<hr>
