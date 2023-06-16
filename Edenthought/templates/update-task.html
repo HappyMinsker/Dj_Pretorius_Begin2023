@@ -3,7 +3,7 @@
 {% include 'base.html' %}
 
 
-<h3>New User !</h3>
+<h3>This is the place where we update our task !</h3>
 
 
 <br>
@@ -13,8 +13,9 @@
 
     {% csrf_token %}
 
-    {{ form.as_p }}
-    <br>
+    {{ form.title }}
+
+    {{ form.description }}
 
     <input type="submit" value="Submit">
 

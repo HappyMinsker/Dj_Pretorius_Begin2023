@@ -1,0 +1,17 @@
+{% include 'base.html' %}
+
+
+<h3>Your list !</h3>
+
+
+<br>
+
+{% for task in tasks %}
+
+<h2>{{task.title}}</h2>
+<p>{{task.description}}</p>
+<br>
+<a href="{% url 'update-task' task.id %}">Update</a>
+<a href="{% url 'delete-task' task.id %}">Delete</a>
+<hr>
+{% endfor %}

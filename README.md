@@ -1,14 +1,14 @@
 # Dj_Pretorius_Begin2023
 
 UDEMY - Cours de Arno pretorius- Ultimate Beginners Course - 2023
-avec `Django`, `Salite`, `AWS` et `Bootstrap`
+avec `Django`, `Sqlite`, `PostGres`, `AWS` et `Bootstrap`
 
 ---
 
 Un bon cours pour debuter avec Django 😊
 
 Developpe avec `VS Code`
-Formation de `Aout 2023`
+Formation de `Juillet 2022`
 
 ---
 
@@ -16,19 +16,24 @@ Formation de `Aout 2023`
 - [x] Creation d'un generateur de mots de passe
 
 ### Points d'interet:
-- [x] Connexion a une base `Salite`
+- [x] Connexion a une base `Sqlite`
 
 
 
 #### Section 5: Apps
 - [x] 20_ 1'47 : Settings `journal.apps.JournalConfig`
+#### Section 8: Forms
+- [x] 38_ 5'40 : Update form `form = TaskForm(request.POST, instance=task)` ⚠️ Instance ... 😯
+#### Section 8: Forms
+- [x] 40_ 2'05 : Nouvelle methode `STATICFILES_DIRS = [ BASE_DIR / 'static' ]`
+#### Section 11: User
+- [x] 48_ 5'40 : USER Form 😁
+- [x] 49_ : LOGIN Form 😁
 
 
 
 
 
-- [x] 13_ : `https://dev.mysql.com/downloads/mysql/`
-  Windows Service Name: `MySQL57`
-- [x] 16_ 2'58: Queries dans `Workbench` + ⚠️Version 8 ⚠️⚠️
-#### Section 4: App creation
-- [x] 19_ 2'17: Demarrer le serveur sur un autre port `python manage.py runserver 7777`
+
+
+

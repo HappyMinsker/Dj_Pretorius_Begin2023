@@ -1,15 +1,27 @@
 {% include 'base.html' %}
 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<img src="{% static 'images/Zappy.jpg' %}">
 
 <h3>Home page !</h3>
 
+<hr>
 
-{% for client in clients %}
-<p>{{client.id}}</p>
-<p>{{client.name}}</p>
-<p>{{client.profession}}</p>
+<a href="{% url 'tasks' %}">Go to tasks </a>
+
 <br>
 
-{% endfor %}
+<a href="{% url 'register' %}">REGISTER NOW !!! </a>
 
-<hr>
+<br>
+
+<a href="{% url 'my-login' %}">LOGIN NOW !!! </a>
+
+<br>
+
+<a href="{% url 'create-task' %}">Create a task </a>
+
+<script src="{% static 'js/app.js' %}"></script>
