@@ -1,21 +1,50 @@
 
+{% load crispy_forms_tags %}
+{% load static %}
 
-{% include 'base.html' %}
-
-
-<h3>This is where you can login</h3>
-
-
-<br>
+<!DOCTYPE html>
 
 
-<form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+    <html lang="en">
 
-    {% csrf_token %}
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+            <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+            <title>LMC | Login</title>
 
-    {{ form.as_p }}
-    <br>
+        </head>
 
-    <input type="submit" value="Submit">
+        <body>
+            <br>
+            <div class="container bg-white shadow-md p-5 form-Layout">
+                <h3>Login to your account</h3>
+                <br>
+                <form method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    {{ form.username|as_crispy_field }}
+                    <br>
+                    {{ form.password|as_crispy_field }}
+                    <br><br>
+                    <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block p-4">&nbsp; Login</button>
+                </form>
+                <br><br>
 
-</form>
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <p id="message-timer" class="alert alert-success float-center text-center">    
+                        {{ message }}
+                    </p>
+                    {% endif %}
+                {% endfor %}
+
+                <br><br>
+                <div class="text-center">            
+                <p>Don't have an account ?</p>
+                <a href="{% url 'register' %}">Register</a>
+            </div>
+            </div>
+
+        </body>
+    </html>

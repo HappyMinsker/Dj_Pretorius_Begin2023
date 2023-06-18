@@ -1,19 +1,27 @@
+
+
 from django.urls import path
 
-from .views import register, home, tasks, create_task, update_task, delete_task, success, my_login, dashboard, user_logout
+from . import views
+
+
+
+
 
 urlpatterns = [
-    path('', home, name='home'),
-    path('tasks/', tasks, name='tasks'),
-    path('create-task/', create_task, name ='create-task'),
-    path('update-task/<int:pk>', update_task, name ='update-task'),
-    path('delete-task/<int:pk>', delete_task, name ='delete-task'),
+    
+    # HomePage
+    path('', views.home, name='home'),
 
-    path('register/', register, name='register'),
-    path('success/',success, name='success'),
+    # Register / Login / Logout
+    path('register/', views.register, name='register'),
+    path('my-login/', views.my_login, name='my-login'),
+    path('user-logout/', views.user_logout, name='user-logout'),
 
-    path('my-login/',my_login, name='my-login'),
-    path('dashboard/',dashboard, name='dashboard'),
-    path('user-logout/',user_logout, name='user-logout'),
+    # Dashboard
+    path('dashboard/', views.dashboard, name='dashboard'),
+
+
+
 
 ]

@@ -1,21 +1,46 @@
 
+{% load crispy_forms_tags %}
+{% load static %}
 
-{% include 'base.html' %}
-
-
-<h3>New User !</h3>
-
-
-<br>
+<!DOCTYPE html>
 
 
-<form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+    <html lang="en">
 
-    {% csrf_token %}
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+            <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+            <title>LMC | Register</title>
 
-    {{ form.as_p }}
-    <br>
+        </head>
 
-    <input type="submit" value="Submit">
+        <body>
+            <br>
+            <div class="container bg-white shadow-md p-5 form-Layout">
+                <h3>Create your account</h3>
+                <h5>Share your thoughts today</h5>
+                <br>
+                <form method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    {{ form.username|as_crispy_field }}
+                    <br>
+                    {{ form.email|as_crispy_field }}
+                    <br>
+                    {{ form.password1|as_crispy_field }}
+                    <br>
+                    {{ form.password2|as_crispy_field }}
+                    <br>
+                    <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block p-4">Create Account</button>
+                </form>
+                <br><br>
+                <div class="text-center">            
+                <p>Already have an account ?</p>
+                <a href="{% url 'my-login' %}">Login</a>
+            </div>
+            
+        </div>
 
-</form>
+        </body>
+    </html>

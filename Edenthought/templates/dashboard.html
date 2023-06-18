@@ -1,13 +1,37 @@
+{% load crispy_forms_tags %} 
 
+{% load static %}
 
-{% include 'base.html' %}
+<!DOCTYPE html>
 
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width-device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://bootswatch.com/5/morph/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <title>LMC | Dashboard</title>
+  </head>
 
-<h3>This is your dashboard</h3>
+  <body>
+    <br />
+    <div class="container bg-white shadow-md p-5 form-Layout">
+      <h3>Your dashboard</h3>
 
-<h2>You havew logged in</h2>
+      <a href="{% url 'user-logout' %}">Logout</a>
 
-<a href="{% url 'user-logout' %}">Logout to Home </a>
-
-<br>
-
+    </div>
+    <br />
+  </body>
+</html>
