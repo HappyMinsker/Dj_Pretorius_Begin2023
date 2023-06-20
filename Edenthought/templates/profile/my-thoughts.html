@@ -1,0 +1,82 @@
+  
+
+
+
+
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+<!DOCTYPE html>
+
+
+    <html lang="en">
+
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+            <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+            <title>LMC | My Thoughts</title>
+
+        </head>
+
+
+        {% include 'base.html' %}
+
+        <body>
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <p id="message-timer" class="alert alert-primary float-center text-center">    
+                    <i class="fa fa-check"></i>&nbsp; {{ message }}
+                </p>
+                {% endif %}
+            {% endfor %}
+            <br>
+
+                {% for thought in thoughts %}
+                    <div class="container bg-white shadow-md p-5 form-Layout" style="margin-top: 20px;">
+                        <strong>{{ thought.title }}</strong>
+                        <br>
+                        <br>
+                        {{ thought.content}}
+                        <br>
+                        <br>
+                        <a class="btn btn-primary navbar-btn" type="button"  href="{% url 'update-thought' thought.id %}">Update</a>
+                        &nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-danger navbar-btn" type="button"  href="{% url 'delete-thought' thought.id %}">Delete</a>
+                        <br>
+                    </div>
+                {% endfor %}
+
+                <br><br>
+
+        </body>
+
+
+
+        <script src="{% static 'js/app.js' %}"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous">
+        </script>
+
+
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

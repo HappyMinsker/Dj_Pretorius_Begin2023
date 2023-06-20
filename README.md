@@ -31,6 +31,10 @@ Formation de `Juillet 2022`
 - [x] 49_ : LOGIN Form 😁
 - [x] 55_ : Django Messages
 #### Section 13 14 15 : Building our project
+- [x] 56_ 7'26 : Exemple de formulaire en FBV
+- [x] 64_ 1'07 : Distinction USER  et PROFILE .. A ecouter pendant 60 secondes
+
+
 
 
 
