@@ -1,7 +1,7 @@
 # Dj_Pretorius_Begin2023
 
 UDEMY - Cours de Arno pretorius- Ultimate Beginners Course - 2023
-avec `Django`, `Sqlite`, `PostGres`, `AWS`, `Bootswatch` et `Bootstrap`
+avec `Django`, `Sqlite`, `PostGres`, `django-environ`, `AWS`, `Bootswatch` et `Bootstrap`
 
 ---
 

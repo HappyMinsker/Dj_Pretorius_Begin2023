@@ -15,17 +15,28 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+import environ
+
+# Initialising our environment variables
+
+env = environ.Env()
+environ.Env.read_env()
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r$#k-zm-b4nt0heudt10^11f7y64u65z-2=tt=+-$2p4fndv8w'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+# CSRF_TRUSTED_ORIGINS = ['https://']
+
 
 
 # Application definition
@@ -88,10 +99,10 @@ WSGI_APPLICATION = 'Edenthought.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb',
-        'USER': 'laurent2',
-        'PASSWORD': '1ByGHWKsSQekNelOEToh',
-        'HOST': 'database-1.cxix8m4615yd.us-east-2.rds.amazonaws.com',
+        'NAME': env('NAME_DB'),
+        'USER': env('USER_DB'),
+        'PASSWORD': env('PASSWORD_DB'),
+        'HOST': env('HOST_DB'),
         'PORT': '5432',
     }
 }
@@ -155,15 +166,15 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = 'True'
 
 EMAIL_HOST_USER = 'lo.miniuk@gmail.com'
-EMAIL_HOST_PASSWORD = 'gmgycmwxuywifztd'
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
 
 DEFAULT_FROM_EMAIL = 'lo.miniuk@gmail.com'
 
 
 # S3 Bucket Configuration
 
-AWS_ACCESS_KEY_ID = 'AKIAQYBWHLI5ACXG533Z'
-AWS_SECRET_ACCESS_KEY = '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'
+
 
 AWS_STORAGE_BUCKET_NAME = 'edenthought2-static'
 
