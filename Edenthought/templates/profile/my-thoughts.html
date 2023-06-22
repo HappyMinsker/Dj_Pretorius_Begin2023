@@ -44,9 +44,9 @@
                         {{ thought.content}}
                         <br>
                         <br>
-                        <a class="btn btn-primary navbar-btn" type="button"  href="{% url 'update-thought' thought.id %}">Update</a>
+                        <a class="btn btn-outline-primary navbar-btn" type="button"  href="{% url 'update-thought' thought.id %}"><i class="fa fa-plus"></i>&nbsp; Update</a>
                         &nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-danger navbar-btn" type="button"  href="{% url 'delete-thought' thought.id %}">Delete</a>
+                        <a class="btn btn-outline-danger navbar-btn" type="button"  href="{% url 'delete-thought' thought.id %}"><i class="fa fa-minus"></i>&nbsp; Delete</a>
                         <br>
                     </div>
                 {% endfor %}
@@ -66,17 +66,6 @@
 
 
     </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

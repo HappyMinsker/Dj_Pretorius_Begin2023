@@ -45,7 +45,6 @@ class ThoughtUpdateForm(forms.ModelForm):
 
 
 
-
 class UpdateUserForm(forms.ModelForm):
     password = None
     class Meta:

@@ -17,6 +17,9 @@
 
         </head>
         
+        {% include 'pre-base.html' %}
+
+
         {% for message in messages %}
         {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
         <p id="message-timer" class="alert alert-primary float-center text-center">    
@@ -25,7 +28,9 @@
         {% endif %}
         {% endfor %}
 
-        <br><br>
+        
+
+
         <body>
             <br>
             <div class="container bg-white shadow-md p-5 form-Layout">

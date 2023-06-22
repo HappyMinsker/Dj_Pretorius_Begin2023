@@ -78,10 +78,21 @@ WSGI_APPLICATION = 'Edenthought.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mydb',
+        'USER': 'laurent2',
+        'PASSWORD': '1ByGHWKsSQekNelOEToh',
+        'HOST': 'database-1.cxix8m4615yd.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -128,6 +139,8 @@ STATICFILES_DIRS = [ BASE_DIR / 'static' ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images' 
 
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -145,4 +158,30 @@ EMAIL_HOST_USER = 'lo.miniuk@gmail.com'
 EMAIL_HOST_PASSWORD = 'gmgycmwxuywifztd'
 
 DEFAULT_FROM_EMAIL = 'lo.miniuk@gmail.com'
-# 
+
+
+# S3 Bucket Configuration
+
+AWS_ACCESS_KEY_ID = 'AKIAQYBWHLI5ACXG533Z'
+AWS_SECRET_ACCESS_KEY = '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'
+
+AWS_STORAGE_BUCKET_NAME = 'edenthought2-static'
+
+# django < 4.2
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# django >= 4.2
+# STORAGES = {"default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"}}
+
+# To allow django-admin collectstatic to automatically put your static files in your bucket set the following in your settings.py:
+# django < 4.2
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# django >= 4.2
+# STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
+
+# If you want to use something like ManifestStaticFilesStorage then you must instead use:
+# django < 4.2
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3ManifestStaticStorage'
+# django >= 4.2
+# STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3ManifestStaticStorage"}}
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME

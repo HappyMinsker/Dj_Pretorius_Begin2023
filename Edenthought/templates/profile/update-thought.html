@@ -17,6 +17,7 @@
             <meta charset="utf-8" />
             <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
             <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
             <title>LMC | Update thought</title>
 
@@ -36,7 +37,7 @@
                     <br>
                     {{ form.content|as_crispy_field }}
                     <br><br>
-                    <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block p-4">&nbsp; Update thought</button>
+                    <button type="submit" class="btn btn-outline-primary btn-lg w-100 btn-block p-4"><i class="fa fa-plus"></i>&nbsp; Update thought</button>
                 </form>
 
                 <br><br>
@@ -44,7 +45,6 @@
             </div>
 
         </body>
-
 
 
         <!-- <script src="{% static 'js/app.js' %}"></script> -->
@@ -56,17 +56,5 @@
 
 
     </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
 

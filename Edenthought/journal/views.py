@@ -44,7 +44,8 @@ def register(request):
             profile = Profile.objects.create(user=current_user)
 
             messages.success(request, "Your account was created!")
-            return redirect('dashboard')
+            # return redirect('dashboard')  -- LMC
+            return redirect('my-login')
         
     context = {'form': form}
     return render(request, 'register.html', context)
@@ -157,7 +158,6 @@ def profile_management(request):
     form = UpdateUserForm(instance=request.user)
     profile = Profile.objects.get(user=request.user)
     form_2 = UpdateProfileForm(instance=profile)
-
 
     if request.method == 'POST':
         form = UpdateUserForm(request.POST, instance=request.user)

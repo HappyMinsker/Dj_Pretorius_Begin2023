@@ -16,7 +16,7 @@ Formation de `Juillet 2022`
 - [x] Creation d'un gestionnaire d'idees.
 
 ### Points d'interet:
-- [x] Connexion a une base `Sqlite`
+- [x] Connexion a une base `PostGreSql`
 
 
 
@@ -30,13 +30,16 @@ Formation de `Juillet 2022`
 - [x] 48_ 5'40 : USER Form 😁
 - [x] 49_ : LOGIN Form 😁
 - [x] 55_ : Django Messages
-#### Section 13 14 15 : Building our project
+#### Section 13 14 15: Building our project
 - [x] 56_ 7'26 : Exemple de formulaire en FBV
-- [x] 64_ 1'07 : Distinction USER  et PROFILE .. A ecouter pendant 60 secondes
+- [x] 64_ 1'07 : Distinction USER et PROFILE .. A ecouter pendant 60 secondes
+#### Section 16 17: Deployment
+- [x] 73_ 1'33 : AWS IAM connexion
+- [x] 81_ 19'52 : Postgres `Edit inbound rules`
 
 
 
-
+<!--  -->
 
 
 

@@ -38,19 +38,16 @@
   <body>
     <br />
     <div class="container bg-white shadow-md p-5 form-Layout">
-      <h3>Your dashboard</h3>
-
-      <img style="width:100px;" src="{{profilePic.profile_pic.url}}">
+      <h3>Welcome to your dashboard, {{user}}!</h3>
       <br><br>
-      <a href="{% url 'user-logout' %}">Logout</a>
-
+      <img style="width:100px; border-radius: 10px;" src="{{profilePic.profile_pic.url}}">
     </div>
 
 
     
     <br>
     <div class="container bg-white shadow-md p-5 form-Layout">
-      <p>Manage your ptrofile settings: For instance you want to upload a 
+      <p>Manage your profile settings: For instance you want to upload a 
         <strong> profile picture.</strong>
       </p>
       <br>
