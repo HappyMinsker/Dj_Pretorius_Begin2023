@@ -18,7 +18,7 @@ Formation de `Juillet 2022`
 ### Points d'interet:
 - [x] Connexion a une base `PostGreSql`
 
-
+https://dev.to/shriekdj/python-failed-building-wheel-for-backportszoneinfo-on-linux-2mo8
 
 #### Section 5: Apps
 - [x] 20_ 1'47 : Settings `journal.apps.JournalConfig`
